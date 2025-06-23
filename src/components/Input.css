@@ -1,0 +1,9 @@
+.input-container{
+    display: flex;
+    input{
+        padding: 0.3rem;
+    }
+    button.input-add{
+        padding: 0.3rem;
+    }
+}
