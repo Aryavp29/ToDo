@@ -11,16 +11,30 @@ const Home = () => {
   const [completedTodos,setCompletedTodos] = useState([])
 
   const handleChange = (e) => {
-    setTodo(e.target.value); 
+    setTodo(e.target.value);
   }
   
   const handleSubmit = () => {
-
+    setTodos((prev)=>[...prev,todo])
+    setTodo("")
   }
+
+  const handleComplete = (index) => {
+    const completedTodo = todos.filter((todo)=>(
+      todos.indexOf(todo) === index
+    ))
+    setCompletedTodos((prev) => [
+      ...prev,
+      ...completedTodo
+    ])
+    const newTodos = todos.filter((todo)=>todos.indexOf(todo) !== index)
+    setTodos(newTodos)
+  }
+
   return (
     <div className='container'>
-        <Input onChange = {handleChange} />
-        <Pendings todos={todos}/>
+        <Input onChange = {handleChange} onSubmit = {handleSubmit} value={todo} />
+        <Pendings todos={todos} handleComplete={handleComplete}/>
         <Completed todos={completedTodos} />
     </div>
   )
