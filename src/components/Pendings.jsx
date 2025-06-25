@@ -11,7 +11,7 @@ const Pendings = ({ todos,handleComplete }) => {
       ) : (
         todos.map((todo,index)=>(
           <div key={index} className='pending-container'>
-            <p>{todo}</p>
+            <p>{todo.text}</p>
             <button className='complete-btn' onClick={()=>handleComplete(index)}>
           <Check/>
             </button>

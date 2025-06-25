@@ -15,13 +15,26 @@ const Home = () => {
   }
   
   const handleSubmit = () => {
-    setTodos((prev)=>[...prev,todo])
+    if(!todo.trim())
+      return
+
+    const currentDate = new Date().toLocaleString("en-IN",{
+    day: "2-digit", month: "2-digit", year: "numeric",
+    hour: "2-digit", minute: "2-digit"
+    })
+
+    const newTodo ={
+      text: todo,
+      date: currentDate
+    }
+    
+    setTodos((prev)=>[...prev,newTodo])
     setTodo("")
   }
 
   const handleComplete = (index) => {
-    const completedTodo = todos.filter((todo)=>(
-      todos.indexOf(todo) === index
+    const completedTodo = todos.filter((_,i)=>(
+      i === index
     ))
     setCompletedTodos((prev) => [
       ...prev,

@@ -5,17 +5,20 @@ const Completed = ({ todos }) => {
   return (
     <div className='completed-container'>
       <h2>Completed ToDos</h2>
-      <div className='completed-todos'>
+      
         {
           todos.length === 0 ? (
             <p>No Todos</p>
           ) : (
             todos.map((todo,index)=>(
-              <p key={index}> {todo} </p>
+              <div key={index} className='completed-todos'>
+                <s> {todo.text} </s><br></br>
+                <small> {todo.date} </small>
+              </div>
+
             ))
           )
         }
-      </div>
     </div>
   )
 }
