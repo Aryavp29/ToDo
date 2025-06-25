@@ -2,8 +2,11 @@
     display: flex;
     input{
         padding: 0.3rem;
+        font-style: oblique;
     }
     button.input-add{
         padding: 0.3rem;
     }
+    border: 2px solid black;
+    padding: 10px;
 }

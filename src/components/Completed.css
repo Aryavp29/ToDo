@@ -4,10 +4,12 @@
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
+    border: 2px solid black;
+    padding: 10px;
     
     .completed-todos{
-        background-color: rgb(66, 145, 66);
         padding: .3rem;
         border-radius: .3rem;
+        font-style: oblique;
     }
 }
