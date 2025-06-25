@@ -15,7 +15,7 @@ const Pendings = ({ todos,handleComplete }) => {
             <button className='complete-btn' onClick={()=>handleComplete(index)}>
           <Check/>
             </button>
-          </div>
+          </div>  
         ))
       )}
     </div>

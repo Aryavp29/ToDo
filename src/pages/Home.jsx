@@ -9,6 +9,8 @@ const Home = () => {
   const [todo, setTodo] = useState("")
   const [todos,setTodos] = useState([])
   const [completedTodos,setCompletedTodos] = useState([])
+  const [edit,setEdit] = useState(null)
+  const [editText,setEditText] = useState("")
 
   const handleChange = (e) => {
     setTodo(e.target.value);
@@ -44,11 +46,27 @@ const Home = () => {
     setTodos(newTodos)
   }
 
+  const handleClear = () => {
+    /*if(window.confirm("Are you sure you want to clear all completed todos?")){
+      setCompletedTodos([])
+      return
+    }*/
+   setCompletedTodos([])
+  }
+
+  /*const handleEdit = (index) => {
+    const toEdit = todos.find(todo => todos.indexOf(todo) === index)
+    if(toEdit){
+      setEdit(index)
+      setEditText(toEdit.text)
+    }
+  }*/
+
   return (
     <div className='container'>
         <Input onChange = {handleChange} onSubmit = {handleSubmit} value={todo} />
-        <Pendings todos={todos} handleComplete={handleComplete}/>
-        <Completed todos={completedTodos} />
+        <Pendings todos={todos} handleComplete={handleComplete} />
+        <Completed todos={completedTodos} handleClear={handleClear}/>
     </div>
   )
 }

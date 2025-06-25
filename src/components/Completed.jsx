@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Completed.css"
 
-const Completed = ({ todos }) => {
+const Completed = ({ todos,handleClear }) => {
   return (
     <div className='completed-container'>
       <h2>Completed ToDos</h2>
@@ -15,10 +15,17 @@ const Completed = ({ todos }) => {
                 <s> {todo.text} </s><br></br>
                 <small> {todo.date} </small>
               </div>
-
+              
+              
             ))
           )
         }
+        {
+          todos.length > 0 && (
+            <button onClick={handleClear}>Clear all</button>
+          )
+        }
+
     </div>
   )
 }
