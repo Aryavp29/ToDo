@@ -47,10 +47,6 @@ const Home = () => {
   }
 
   const handleClear = () => {
-    /*if(window.confirm("Are you sure you want to clear all completed todos?")){
-      setCompletedTodos([])
-      return
-    }*/
    setCompletedTodos([])
   }
 
